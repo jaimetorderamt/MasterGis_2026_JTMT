@@ -1,0 +1,17 @@
+
+body{
+    margin: 0px;
+}
+
+.menu-superior {
+    background-color: gray;
+    display: flex;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+& a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+}
