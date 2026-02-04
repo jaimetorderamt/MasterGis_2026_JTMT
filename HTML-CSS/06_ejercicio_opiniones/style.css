@@ -1,0 +1,75 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    margin: 0;
+    align-items: center;
+}
+
+& .imagen {
+    margin: 10px;
+}
+
+& .menu-principal {
+    display: flex;
+    flex-direction: column ;
+    & p1 {
+        margin: 5px;
+        margin-left: 0px;
+        font-size: 20px;
+    }
+    & p2 {
+        margin: 5px;
+        margin-left: 0px;
+        font-size: 20px;
+        color: green;
+    }
+}
+
+& .botones {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    & button {
+        color: black;
+        padding: 8px;
+        border-radius: 15px;
+        font-size: 12px;
+        background-color: green;
+        border-width: 3px;
+        border-color: green;
+        cursor: pointer;
+    }
+    & #reservar-cita {
+        background-color: white;
+    }
+}
+
+& .comentarios {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    align-items: center;
+}
+
+& .texto {
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    & a {
+    text-decoration: none;
+    color: gray;
+    }
+    & p3 {
+    margin: 3px;
+    margin-left: 0px;
+    }
+}
+& p4 {
+    margin: 5px;
+    padding: 15px;
+    background-color: green;
+    border-radius: 25px;
+    color: white;
+}

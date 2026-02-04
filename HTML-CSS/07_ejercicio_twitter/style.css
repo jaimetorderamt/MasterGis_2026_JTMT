@@ -1,0 +1,52 @@
+/
+
+html{
+  height: 100vh;
+}
+ 
+body {
+  height: auto;
+  width: auto;
+  min-height: 100vh;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+ 
+}
+
+& .Tweet {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f8fa;
+    padding: 20px;
+
+}
+
+& .Encabezado{
+    display: flex;
+    justify-content: space-around;
+}
+& .imagen{
+    width: 48px;
+    margin-right: 12px;
+}
+
+& .usuario{
+    align-items: cente
+    gap: 5px;
+    font-size: 14px;
+    }
+
+
+& .texto {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+& .fecha {
+    color: gray;
+}
+
+./
