@@ -1,4 +1,120 @@
 body{
- background-color: beige;
-;
+    background-color: #f5f6fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px;
+    max-width: 1300px;
+    
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    color: whitesmoke;
+}
+
+& .encabezado{
+    background-color: #2a5298;
+    display: flex;
+    gap: 40px;
+    padding: 40 px;
+    border-radius: 20px;
+}
+
+& .perfilpersonal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+& #fotopersonal{
+    border-radius: 50px;
+    width: 200px;
+    object-fit: cover;
+}
+
+/* Colocamos los tres bloques con distancias con respecto al siguiente y para el espacio interno  */
+
+.formacionprofesional,
+.formacionacademica,
+.formacioncomplementaria {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 40px;
+}
+
+/* Creamos la linea vertical que servira como timeline cronológico */
+/* .formacionprofesional::before, */
+.formacionacademica::before,
+.formacioncomplementaria::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 40px;
+    bottom: 0;
+    width: 3px;
+    background-color: #2a5298;
+}
+
+/* Convertimos los párrafos en "eventos" para ubicar las esferas cronológicas */
+/* .formacionprofesional p:nth-of-type(3n+1), */
+.formacionacademica p:nth-of-type(2n+1),
+.formacioncomplementaria p:nth-of-type(2n+1) {
+    position: relative;
+    font-weight: 600;
+    color: #2a5298;
+}
+
+/* .formacionprofesional p:nth-of-type(3n+1)::before, */
+.formacionacademica p:nth-of-type(2n+1)::before,
+.formacioncomplementaria p:nth-of-type(2n+1)::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background-color: #2a5298;
+    border-radius: 50%;
+}
+
+/* Para poner el logo en la esfera de cada puesto */
+
+.esfera {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff; /* o azul claro de tu paleta */
+    border: 3px solid #2a5298; /* contorno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* no se encoge */
+    overflow: hidden; /* para que la img no salga del círculo */
+    margin-right: 20px; /* separación con el texto */
+}
+
+.esfera img {
+    width: 70%; /* ajusta el tamaño del logo dentro de la esfera */
+    height: auto;
+}
+
+.acciona {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 0;
+}
+
+.acciona::before {
+    content: "";
+    position: absolute;
+    left: 19px; /* mitad de la esfera de 40px */
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #2a5298;
+    z-index: -1; /* detrás de la esfera */
 }
