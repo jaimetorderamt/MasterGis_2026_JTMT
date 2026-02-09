@@ -5,7 +5,6 @@ body{
     justify-content: center;
     margin: 30px;
     max-width: 1300px;
-    
 }
 
 main{
@@ -35,8 +34,7 @@ main{
     object-fit: cover;
 }
 
-/* Colocamos los tres bloques con distancias con respecto al siguiente y para el espacio interno  */
-
+/* Se colocan los tres bloques principales con distancias con respecto al siguiente y al extremo izquierdo  */
 .formacionprofesional,
 .formacionacademica,
 .formacioncomplementaria {
@@ -45,49 +43,22 @@ main{
     margin-bottom: 40px;
 }
 
-/* Creamos la linea vertical que servira como timeline cronológico */
-/* .formacionprofesional::before, */
-.formacionacademica::before,
-.formacioncomplementaria::before {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 40px;
-    bottom: 0;
-    width: 3px;
-    background-color: #2a5298;
-}
-
-/* Convertimos los párrafos en "eventos" para ubicar las esferas cronológicas */
-/* .formacionprofesional p:nth-of-type(3n+1), */
-.formacionacademica p:nth-of-type(2n+1),
-.formacioncomplementaria p:nth-of-type(2n+1) {
-    position: relative;
-    font-weight: 600;
-    color: #2a5298;
-}
-
-/* .formacionprofesional p:nth-of-type(3n+1)::before, */
-.formacionacademica p:nth-of-type(2n+1)::before,
-.formacioncomplementaria p:nth-of-type(2n+1)::before {
-    content: "";
-    position: absolute;
-    left: -34px;
-    top: 6px;
-    width: 14px;
-    height: 14px;
-    background-color: #2a5298;
+/* Para poner el logo en la esfera de cada puesto y ajustarlo a una posición concreta */
+.esfera1,
+.esfera2,
+.esfera3,
+.esfera4,
+.esfera5,
+.esfera6,
+.esfera7,
+.esfera8,
+.esfera9,
+.esfera10 {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-}
-
-/* Para poner el logo en la esfera de cada puesto */
-
-.esfera {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ffffff; /* o azul claro de tu paleta */
-    border: 3px solid #2a5298; /* contorno */
+    background-color: #ffffff; 
+    border: 3px solid #2a5298;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,25 +67,52 @@ main{
     margin-right: 20px; /* separación con el texto */
 }
 
-.esfera img {
-    width: 70%; /* ajusta el tamaño del logo dentro de la esfera */
+/* Para ajustar el tamaño del logo dentro de la esfera */
+.esfera1 img,
+.esfera2 img,
+.esfera3 img,
+.esfera4 img,
+.esfera5 img,
+.esfera6 img,
+.esfera7 img,
+.esfera8 img,
+.esfera9 img,
+.esfera10 img { 
+    width: 80%;
     height: auto;
 }
 
-.acciona {
+/* Para colocar el contenido al lado de cada una de las esferas */
+.acciona, 
+.sinergia,
+.cram,
+.esri,
+.umu,
+.ucm,
+.uam,
+.orientacion,
+.cigarral,
+.seo {
     display: flex;
     align-items: flex-start;
     position: relative;
     padding-left: 0;
 }
 
-.acciona::before {
+/* Para añadir la timeline entre un evento y otro */
+.acciona::before, 
+.sinergia::before,
+.esri::before,
+.umu::before,
+.ucm::before,
+.orientacion::before,
+.cigarral::before {
     content: "";
     position: absolute;
-    left: 19px; /* mitad de la esfera de 40px */
+    left: 35px;
     top: 0;
     bottom: 0;
     width: 3px;
     background-color: #2a5298;
-    z-index: -1; /* detrás de la esfera */
+    z-index: -1;
 }
