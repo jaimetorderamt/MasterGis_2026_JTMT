@@ -1,0 +1,284 @@
+/* CSS para el CV - Versión simplificada para clase */
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+    /* Color gris claro de fondo */
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Estilos del encabezado y menú */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0 20px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    list-style: none;
+}
+
+.desplegable {
+    position: relative;
+    display: inline-block;
+}
+
+.boton-desplegable {
+    background-color: #2a5298;
+    /* Azul principal */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.desplegable:hover .boton-desplegable {
+    background-color: #1e3c72;
+    /* Azul más oscuro al pasar el ratón */
+}
+
+/* Código para el menú desplegable (buscado en tutoriales) */
+.desplegable-contenido {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.desplegable-contenido a {
+    color: #2c3e50;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.desplegable-contenido a:hover {
+    background-color: #f4f6f9;
+    color: #2a5298;
+}
+
+.desplegable:hover .desplegable-contenido {
+    display: block;
+    /* Muestra el menú al pasar el ratón */
+}
+
+/* Efecto de scroll suave */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Contenedor principal */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* Sección de arriba (perfil) */
+.encabezado {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fotoperfil img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #1e3c72;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.perfilpersonal .datos {
+    text-align: center;
+}
+
+.perfilpersonal .datos h1 {
+    font-size: 2.5rem;
+    color: #2a5298;
+    margin-bottom: 0.5rem;
+}
+
+.perfilpersonal .datos h2 {
+    font-size: 1.5rem;
+    color: #1e3c72;
+    margin-bottom: 1rem;
+}
+
+.infocontacto {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.texto p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.redes-sociales {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.redes-sociales .boton {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #2a5298;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.redes-sociales .boton:hover {
+    background-color: #1e3c72;
+}
+
+/* Títulos de las secciones */
+h4 {
+    font-size: 1.5rem;
+    color: #2a5298;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #fca311;
+    /* Subrayado naranja simple */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Lista de habilidades */
+.lista-habilidades {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.lista-habilidades li {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    border-left: 4px solid #fca311;
+    flex: 1 1 300px;
+}
+
+/* Secciones de cronología */
+.formacionprofesional,
+.formacionacademica,
+.formacioncomplementaria {
+    text-align: justify;
+}
+
+.elemento-cronologia {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contenedor-logo {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 3px solid #2a5298;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.contenedor-logo img {
+    width: 80%;
+    height: auto;
+}
+
+.contenido {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+}
+
+.contenido .fecha {
+    font-size: 0.85rem;
+    color: #2a5298;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.contenido .titulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contenido .descripcion {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+/* Pie de página */
+footer {
+    background-color: #2a5298;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Diseño para móviles */
+@media (max-width: 768px) {
+    .encabezado {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .elemento-cronologia {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenido {
+        text-align: center;
+    }
+}
