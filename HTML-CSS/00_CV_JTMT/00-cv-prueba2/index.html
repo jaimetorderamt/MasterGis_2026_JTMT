@@ -11,18 +11,21 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="main.js" defer></script>
+
 </head>
 
 <body>
     <header>
+        <p class="nombreHeader">Jaime Tordera Moreno-Tomé</p>
         <nav>
             <ul class="menu">
                 <li class="desplegable">
-                    <a href="#" class="boton-desplegable">Tipo de Formación ▾</a>
-                    <div class="desplegable-contenido">
-                        <a href="#formacionprofesional">Profesional</a>
-                        <a href="#formacionacademica">Académica</a>
-                        <a href="#formacioncomplementaria">Complementaria</a>
+                    <a href="#" class="botonDesplegable">Tipo de Formación ▾</a>
+                    <div class="contenidoDesplegable">
+                        <a href="#formacionProfesional">Profesional</a>
+                        <a href="#formacionAcademica">Académica</a>
+                        <a href="#formacionComplementaria">Complementaria</a>
                     </div>
                 </li>
             </ul>
@@ -30,20 +33,17 @@
     </header>
 
     <main>
-        <section class="encabezado">
-            <div class="fotoperfil">
+        <section class="panelPrincipal">
+            <div class="fotoPerfil">
                 <img id="foto"
                     src="https://media.licdn.com/dms/image/v2/C4D03AQHKTlXHwewE2g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643196807559?e=1772064000&v=beta&t=R5sN7mDP43zkHyyUmnotaCzZlnF0QCXz2gaDMww9HH0"
-                    alt="Jaime Tordera" width="300">
+                    alt="Jaime Tordera" width="250">
             </div>
 
-            <div class="perfilpersonal">
+            <div class="perfilPersonal">
                 <div class="datos">
                     <h1>JAIME TORDERA MORENO-TOMÉ</h1>
-                    <h2>Técnico Junior GIS</h2>
-                    <div class="infocontacto">
-                        <span>jaimetorderamt@gmail.com</span> | <span>+34 697 126 122</span>
-                    </div>
+                    <h2>Técnico GIS</h2>
                 </div>
                 <div class="texto">
                     <p>Me considero una persona asertiva, proactiva y con una alta capacidad de resiliencia, capaz de
@@ -59,16 +59,12 @@
                         del cambio climático, ámbitos en los que considero que la tecnología GIS juega un papel clave.
                     </p>
                 </div>
-                <div class="redes-sociales">
-                    <a href="https://www.linkedin.com/in/jaime-tordera-moreno-tom%C3%A9/" target="_blank"
-                        class="boton">LinkedIn</a>
-                </div>
             </div>
         </section>
 
-        <section class="aptitudeshabilidades">
+        <section class="aptitudesHabilidades">
             <h4>APTITUDES Y HABILIDADES</h4>
-            <ul class="lista-habilidades">
+            <ul class="listaHabilidades">
                 <li>Capacidad de atención, retención y análisis alta.</li>
                 <li>Habilidad comunicativa y comprensiva.</li>
                 <li>Actitud positiva y proactiva.</li>
@@ -83,11 +79,11 @@
             <p>Carnet de conducir B con vehículo propio.</p>
         </section>
 
-        <section id="formacionprofesional" class="formacionprofesional">
+        <section id="formacionProfesional" class="formacionProfesional">
             <h4>FORMACIÓN PROFESIONAL</h4>
 
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Acciona_logo.svg/1280px-Acciona_logo.svg.png"
                         alt="Acciona Logo">
                 </div>
@@ -102,8 +98,8 @@
                 </div>
             </div>
 
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://media.licdn.com/dms/image/v2/C4D0BAQHLPiTxeg7FCA/company-logo_200_200/company-logo_200_200/0/1630565137356/sinergia_medio_ambiente_logo?e=2147483647&v=beta&t=hc1pFWXjzsO4TlEqxynk1j58o_PAWc7EcOACD0TyTV0"
                         alt="Sinergia Logo">
                 </div>
@@ -119,8 +115,8 @@
                 </div>
             </div>
 
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoAp7q3im9EdMZ8IdoolMjOQrrC3jKi-dZaw&s"
                         alt="CRAM Logo">
                 </div>
@@ -135,11 +131,11 @@
             </div>
         </section>
 
-        <section id="formacionacademica" class="formacionacademica">
+        <section id="formacionAcademica" class="formacionAcademica">
             <h4>FORMACIÓN ACADÉMICA</h4>
 
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://datos.gob.es/sites/default/files/success/images/logo_esri.jpg" alt="ESRI Logo">
                 </div>
                 <div class="contenido">
@@ -148,8 +144,8 @@
                 </div>
             </div>
 
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://keystoneacademic-res.cloudinary.com/image/upload/element/24/247880_58e01bb8-aadc-4906-8b78-476409ac1c79-TICKET.hs_file_upload-LogosimboloUMU-positivo.png"
                         alt="UMU Logo">
                 </div>
@@ -159,8 +155,8 @@
                 </div>
             </div>
 
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDKZeF-f0FbvHtfy-hZLEryIMShvkXYLoATg&s"
                         alt="UCM Logo">
                 </div>
@@ -170,8 +166,8 @@
                 </div>
             </div>
 
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://sciencemediacentre.es/sites/default/files/images/marcaUAM_centroColor%20%281%29.png"
                         alt="UAM Logo">
                 </div>
@@ -182,10 +178,10 @@
             </div>
         </section>
 
-        <section id="formacioncomplementaria" class="formacioncomplementaria">
+        <section id="formacionComplementaria" class="formacionComplementaria">
             <h4>FORMACIÓN COMPLEMENTARIA</h4>
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://d833b93a9d.clvaw-cdnwnd.com/39724e481cca772019b15c3ae9d0b045/200000289-9f348a12a0/LOGO%20OFICIAL%20TOLEDO%20O%20OFICIAL.jpg"
                         alt="Toledo Orientacion Logo">
                 </div>
@@ -196,8 +192,8 @@
                 </div>
             </div>
 
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdcgkjOzarX5ij9Po6DHLnwIZrl4BCkKyPOg&s"
                         alt="Cigarral Logo">
                 </div>
@@ -207,21 +203,32 @@
                 </div>
             </div>
 
-            <div class="elemento-cronologia">
-                <div class="contenedor-logo">
+            <div class="elementoCronologia">
+                <div class="contenedorLogo">
                     <img src="https://seo.org/wp-content/uploads/2021/11/logo.png" alt="SEO Logo">
                 </div>
                 <div class="contenido">
                     <p class="fecha">Madrid | oct 2019 - jul 2020</p>
-                    <p class="titulo">Voluntariado del Cuerpo Europeo de Solidaridad en SEO/BirdLife</p>
+                    <p class="titulo">Voluntario del Cuerpo Europeo de Solidaridad en SEO/BirdLife</p>
                 </div>
             </div>
         </section>
+
+        <div class="actualizacionFecha">
+            <span id="anioActual"></span>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Jaime Tordera. Designed for MasterGIS.</p>
+        <p> <strong>jaimetorderamt@gmail.com | +34 697 126 122</strong></p>
+        <div class="redes">
+            <a href="https://www.linkedin.com/in/jaime-tordera-moreno-tom%C3%A9/" class="boton">LinkedIn</a>
+        </div>
     </footer>
+
+    <button onclick="subirArriba()" id="botonSubir" title="Inicio">▴</button>
+
+
 </body>
 
 </html>
