@@ -26,5 +26,7 @@ const hospitalesFl = new FeatureLayer({
 url: "https://services1.arcgis.com/nCKYwcSONQTkPA4K/arcgis/rest/services/Hospitales/FeatureServer",
       });
 
+// Tambien se puede añadir la capa desde el portal
+
 // Añadir la capa al mapa
 mapa.add(hospitalesFl)
