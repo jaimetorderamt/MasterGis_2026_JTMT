@@ -1,47 +1,45 @@
 // Importar librerias necesarias 
 const Point = await $arcgis.import("@arcgis/core/geometry/Point.js");
+const SimpleMarkerSymbol = await $arcgis.import("@arcgis/core/symbols/SimpleMarkerSymbol.js");
 const Graphic = await $arcgis.import("@arcgis/core/Graphic.js");
 const GraphicsLayer = await $arcgis.import("@arcgis/core/layers/GraphicsLayer.js");
 
 // Añadir puntos al mapa
 
-// 1. Geometria
+// 1. Geometria (importamos libreria 1)
 const geometriaPunto = new Point({
-    latitude: -4,
-    longitude: 41.4
+    latitude: 39.8,
+    longitude: -4
 })
 
-// 2. Simbología
-
-const SimpleMarkerSymbol = await $arcgis.import("@arcgis/core/symbols/SimpleMarkerSymbol.js");
+// 2. Simbología (importamos libreria 2)
 
 const simbologiaPunto = new SimpleMarkerSymbol({
-  angle: 0,
-  color: [102,169,240,1],
+  angle: 180,
+  color: [0,194,39,1],
   outline: {
     cap: "round",
-    color: [107,0,194,1],
+    color: [194,0,48,1],
     join: "round",
-    miterLimit: 2,
-    style: "none",
+    miterLimit: 1,
+    style: "dash",
     width: 1
   },
   path: "undefined",
-  size: 15,
-  style: "triangle",
+  size: 14,
+  style: "x",
   xoffset: 0,
   yoffset: 0
 });
 
-// 3. Unimos geometria y simblogia (Reference-CoreApi-Graphic (al final del todo)) (importamos libreria 2)
+// 3. Unimos geometria y simbologia (Reference-CoreApi-Graphic (al final del todo)) (importamos libreria 3)
 
 const graficoPunto = new Graphic ({
     geometry: geometriaPunto,
-    Symbol: simbologiaPunto,
-
+    symbol: simbologiaPunto
 })
 
-// Creo una capa gráfica para los gráficos que vaya a a crear (importamos libreria 3)
+// Creo una capa gráfica para los gráficos que vaya a a crear (importamos libreria 4)
 
 const capaGraficaGL = new GraphicsLayer ()
 capaGraficaGL.add(graficoPunto)
@@ -49,7 +47,7 @@ capaGraficaGL.add(graficoPunto)
 // Nos ha faltado acceder al mapa... accedemos a el llamandole: 
 const arcgisMap = document.querySelector('arcgis-map')
 
-// cogemos el evento (cuando se cargue el mapa, que se añada el grafico al mapa)
+// Cogemos el evento (cuando se cargue el mapa, que se añada el grafico al mapa)
 arcgisMap.addEventListener('arcgisViewReadyChange', ()=>{
 arcgisMap.map.add(capaGraficaGL)
 })
