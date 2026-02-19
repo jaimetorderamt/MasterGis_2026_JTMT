@@ -10,10 +10,10 @@ const arcgisMap = document.querySelector('arcgis-map')
 // Guardamos la capa en memoria
 arcgisMap.addEventListener('arcgisViewReadyChange', (eventoViewReadyChange)=>{
 
-    const hospitalesFl = new FeatureLayer({
+const hospitalesFl = new FeatureLayer({
     url:'https://services1.arcgis.com/nCKYwcSONQTkPA4K/ArcGIS/rest/services/Hospitales/FeatureServer/0'
 })
-// Añadir capa al mapa
+// Añadir capa al mapa (no es necesaria añadir la capa general al mapa)
 // arcgisMap.map.add(hospitalesFl)
 
 const peticionQuery = new Query({
@@ -23,16 +23,16 @@ const peticionQuery = new Query({
     outFields: ['*']
 })
 
-// El siguiente resultado es una promesa!!!!!!
+// El siguiente resultado es una promesa!!!!!! Mandar la consulta a la capa
 const resultadoQuery = hospitalesFl.queryFeatures(peticionQuery)
 
 // La parte de que la petición de la promesa se cumple: (habria que hacer tb el catch por si hay algun error que aparezca en consola)
 
 resultadoQuery.then((resultadoFeatureSet)=>{
     
-    const entidades = resultadoFeatureSet.features 
+const entidades = resultadoFeatureSet.features 
 
-    // Falta la simbologia (la geometria y el grafico ya está). Importamos la libreria (libreria 3) y la simbologia: 
+// Falta la simbologia (la geometria y el grafico ya está). Importamos la libreria (libreria 3) y la simbologia: 
 
 const simbologiaPunto = new SimpleMarkerSymbol({
   angle: 180,
