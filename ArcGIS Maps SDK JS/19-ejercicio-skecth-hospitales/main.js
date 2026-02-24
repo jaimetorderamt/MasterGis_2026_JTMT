@@ -22,7 +22,7 @@ sketch.availableCreateTools = ["point"];
 
 
 sketch.addEventListener('arcgisCreate', async (customEvent) => {
-  if (customEvent.detail.tool === 'point'&& customEvent.detail.state === 'complete') {
+  if (customEvent.detail.tool === 'point' && customEvent.detail.state === 'complete') {
     const geometriaPunto = customEvent.detail.graphic.geometry;
 
     // Realizamos la consulta espacial
@@ -35,7 +35,7 @@ sketch.addEventListener('arcgisCreate', async (customEvent) => {
     query.returnGeometry = true;
 
     try {
-    // Promesa
+      // Promesa
       const results = await hospitalesFl.queryFeatures(query);
       console.log("Hospitales encontrados:", results.features.length);
 
