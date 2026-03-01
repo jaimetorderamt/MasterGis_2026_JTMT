@@ -14,9 +14,6 @@ const arcgisMap = document.querySelector('arcgis-map')
 const hospitalesFl = new FeatureLayer({
     url: 'https://services1.arcgis.com/nCKYwcSONQTkPA4K/ArcGIS/rest/services/Hospitales/FeatureServer/0'
 })
-
-// arcgisMap.map.add(hospitalesFl)
-
 // 4 Crear el polígono 
 // Geometria
 const geometriaPoligono = new Polygon({
@@ -28,11 +25,12 @@ const geometriaPoligono = new Polygon({
             [-3.13, 40.56],
         ],
     ],
+    spatialReference: { wkid: 4326 }
 })
 
 // Simbologia
 const simbologiaPoligono = new SimpleFillSymbol({
-    color: [191, 0, 194, 1],
+    color: [191, 0, 194, 0.5],
     outline: {
         cap: "round",
         color: [0, 122, 194, 1],
@@ -44,7 +42,7 @@ const simbologiaPoligono = new SimpleFillSymbol({
     style: 'solid'
 });
 
-// Esto es una simbologia de punto creada a posteriori para la capa de hospitales
+// Simbologia para los hospitales encontrados
 const simbologiaPunto = new SimpleMarkerSymbol({
     angle: 180,
     color: [0, 194, 39, 1],
@@ -56,11 +54,8 @@ const simbologiaPunto = new SimpleMarkerSymbol({
         style: "dash",
         width: 1
     },
-    path: "undefined",
     size: 14,
-    style: "x",
-    xoffset: 0,
-    yoffset: 0
+    style: "x"
 });
 
 // Geometria + Simbologia
@@ -69,13 +64,11 @@ const graficoPoligono = new Graphic({
     symbol: simbologiaPoligono
 })
 
-// Crear capa gráfica
+// Crear capa gráfica para el polígono
 const capaGraficaPoligono = new GraphicsLayer()
 capaGraficaPoligono.add(graficoPoligono)
 
-
-// 5 Hacer la query (crearla)
-
+// 5 Preparar la query
 const peticionHospitales = new Query({
     geometry: geometriaPoligono,
     returnGeometry: true,
@@ -83,35 +76,34 @@ const peticionHospitales = new Query({
     spatialRelationship: 'intersects'
 })
 
-// 5.1 Mandar la query
-
-// 7 Añadir la capa al mapa
+// 7 Añadir la capa al mapa e inciar lógica
 
 arcgisMap.addEventListener('arcgisViewReadyChange', () => {
-    arcgisMap.map.add(capaGraficaPoligono)
 
-    const resultadoQueryHospitales = hospitalesFl.queryFeatures(peticionHospitales)
+    // Añadimos la capa base de hospitales (opcional, pero la pusiste)
+    arcgisMap.map.add(hospitalesFl)
 
-    resultadoQuery.then((resultadosFeatureSet) => {
+    // Añadir capa del polígono
+    arcgisMap.map.add(capaGraficaPoligono);
 
-        const entidades = resultadosFeatureSet.features
+    // Ejecutar la consulta
+    const consultaHospitales = hospitalesFl.queryFeatures(peticionHospitales);
 
-        // Esto genera un array con todo lo que recoge de la capa. ahora hay que aplicar un iterador .map, for of, while, for each... 
+    consultaHospitales.then((resultadosFeatureSet) => {
+        const entidades = resultadosFeatureSet.features;
 
+        // Aplicar simbología a los resultados encontrados
         const entidadesConSimbologia = entidades.map((entidadGrafico) => {
-            entidadGrafico.symbol = simbologiaPunto
-            return entidadGrafico
-        })
+            entidadGrafico.symbol = simbologiaPunto;
+            return entidadGrafico;
+        });
 
+        // Crear y añadir capa con los resultados
         const capaGraficaResultado = new GraphicsLayer({
-            graphics: [entidadesConSimbologia],
-            title: 'HospitalesConCruz'
-        })
+            title: 'HospitalesEncontrados'
+        });
 
-        capaGraficaResultado.addMany(entidadesConSimbologia)
-
-        arcgisMap.map.add(capaGraficaResultado)
-
-    })
-
-})
+        capaGraficaResultado.addMany(entidadesConSimbologia);
+        arcgisMap.map.add(capaGraficaResultado);
+    });
+});

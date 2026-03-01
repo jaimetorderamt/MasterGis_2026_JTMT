@@ -1,9 +1,6 @@
 // Importamos las librerias 
-
 // Map - https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html (cogemos el CDN)
-
 // MapView - https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html (cogemos el CDN)
-
 // FeatureLayer - (cogemos el CDN)
 
 const Map = await $arcgis.import("@arcgis/core/Map.js");

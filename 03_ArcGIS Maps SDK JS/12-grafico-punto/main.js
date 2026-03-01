@@ -13,7 +13,6 @@ const geometriaPunto = new Point({
 })
 
 // 2. Simbología (importamos libreria 2)
-
 const simbologiaPunto = new SimpleMarkerSymbol({
   angle: 180,
   color: [0,194,39,1],
@@ -33,14 +32,12 @@ const simbologiaPunto = new SimpleMarkerSymbol({
 });
 
 // 3. Unimos geometria y simbologia (Reference-CoreApi-Graphic (al final del todo)) (importamos libreria 3)
-
 const graficoPunto = new Graphic ({
     geometry: geometriaPunto,
     symbol: simbologiaPunto
 })
 
 // Creo una capa gráfica para los gráficos que vaya a a crear (importamos libreria 4)
-
 const capaGraficaGL = new GraphicsLayer ()
 capaGraficaGL.add(graficoPunto)
 

@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scene layer</title>
-  <script type="module" src="main.js" defer></script>
+  <title>Seleccion polígonos</title>
 
   <!-- Load Calcite Design System -->
   <script type="module" src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js"></script>
@@ -15,6 +14,8 @@
 
   <!-- Load the JavaScript Maps SDK Map components or other component packages -->
   <script type="module" src="https://js.arcgis.com/4.34/map-components/"></script>
+
+  <script type="module" src="main.js" defer></script>
 
   <style>
     html,
@@ -26,9 +27,7 @@
 </head>
 
 <body>
-  <arcgis-scene id="scenaview" basemap="topo-vector" camera-position="-3.69, 40.45, 5000">
-    <button id="boton" position="bottom-right">Viaje</button>
-  </arcgis-scene>
+  <arcgis-map basemap="topo-vector" center="-3.7, 40.8" zoom="8"></arcgis-map>
 </body>
 
 </html>

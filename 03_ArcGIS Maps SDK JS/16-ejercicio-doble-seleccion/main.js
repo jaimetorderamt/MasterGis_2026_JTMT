@@ -17,7 +17,7 @@ arcgisMap.addEventListener('arcgisViewReadyChange', (eventoViewReadyChange) => {
         url: 'https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries/FeatureServer/0'
     })
     const incendios = new FeatureLayer({
-        url: 'https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/MODIS_Thermal_v1/FeatureServer/1'
+        url: 'https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/MODIS_Thermal_v1/FeatureServer/0'
     })
 
 // Esta capa la hemos hecho al final, pero la ponemos aqui para que este fuera del bucle 

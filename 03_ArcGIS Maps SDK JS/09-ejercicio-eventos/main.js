@@ -20,7 +20,7 @@ console.log(resultadoMovimiento)
 
 // El movimiento sale bien
     resultadoMovimiento.then(()=>{
-        vistaMapa.zoom = 10
+        vistaMapa.zoom = 8
     })
 
 // El movimiento sale mal (buena práctica)

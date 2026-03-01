@@ -1,8 +1,9 @@
 // Importar librerias
-const sketch = document.querySelector('arcgis-sketch');
-const arcgisMap = document.querySelector('arcgis-map');
 const GraphicsLayer = await $arcgis.import('@arcgis/core/layers/GraphicsLayer.js');
 const FeatureLayer = await $arcgis.import("@arcgis/core/layers/FeatureLayer.js");
+
+const sketch = document.querySelector('arcgis-sketch');
+const arcgisMap = document.querySelector('arcgis-map');
 
 const hospitalesFl = new FeatureLayer({
   url: 'https://services1.arcgis.com/nCKYwcSONQTkPA4K/arcgis/rest/services/Hospitales/FeatureServer'
