@@ -22,7 +22,6 @@ const poblacionRenderer = new SimpleRenderer({
   ]
 });
 
-
 const poblacionFl = new FeatureLayer({
   url: 'https://services1.arcgis.com/YFraetVkEAF1lMag/arcgis/rest/services/Nivel_estudios_y_poblaci%C3%B3n_por_CCAA_2021/FeatureServer/1',
   renderer: poblacionRenderer

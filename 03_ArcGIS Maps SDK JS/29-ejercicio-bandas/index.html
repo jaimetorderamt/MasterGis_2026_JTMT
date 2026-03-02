@@ -7,9 +7,9 @@
   <title>Bandas</title>
 
 
-<!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
-<script type="module" src="https://js.arcgis.com/5.0/"></script>
-  
+  <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
+  <script type="module" src="https://js.arcgis.com/5.0/"></script>
+
   <script type="module" src="main.js" defer></script>
   <style>
     html,
@@ -21,9 +21,9 @@
 </head>
 
 <body>
-  <arcgis-map basemap="topo-vector" center ="-16.15, 28.28">
-  <arcgis-swipe direction="horizontal" position="25"></arcgis-swipe>
-  <calcite-button slot="bottom-right">Agricultura</calcite-button>
+  <arcgis-map basemap="topo-vector" center="-16.15, 28.28" zoom = "9">
+    <arcgis-swipe direction="horizontal" position="25"></arcgis-swipe>
+    <calcite-button slot="bottom-right">Agricultura</calcite-button>
   </arcgis-map>
 </body>
 

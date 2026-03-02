@@ -2,7 +2,6 @@ const FeatureLayer = await $arcgis.import("@arcgis/core/layers/FeatureLayer.js")
 const ClassBreaksRenderer = await $arcgis.import("@arcgis/core/renderers/ClassBreaksRenderer.js");
 
 
-
 const estacionesMeteorologicasFl = new FeatureLayer({
   url: 'https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/weather_stations_010417/FeatureServer/0',
   renderer: new ClassBreaksRenderer({

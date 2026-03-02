@@ -1,6 +1,7 @@
 const FeatureLayer = await $arcgis.import("@arcgis/core/layers/FeatureLayer.js");
 const HeatmapRenderer = await $arcgis.import("@arcgis/core/renderers/HeatmapRenderer.js");
 
+const arcgisMap = document.querySelector('arcgis-map');
 
 const hospitalesRenderer = new HeatmapRenderer({
   colorStops: [
@@ -20,8 +21,6 @@ const hospitalesFl = new FeatureLayer({
   url: 'https://services1.arcgis.com/nCKYwcSONQTkPA4K/arcgis/rest/services/Hospitales/FeatureServer/0',
   renderer: hospitalesRenderer
 });
-
-const arcgisMap = document.querySelector('arcgis-map');
 
 arcgisMap.addEventListener('arcgisViewReadyChange', () => {
   arcgisMap.map.add(hospitalesFl)

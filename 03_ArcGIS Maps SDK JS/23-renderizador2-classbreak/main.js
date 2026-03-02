@@ -1,8 +1,8 @@
 const FeatureLayer = await $arcgis.import("@arcgis/core/layers/FeatureLayer.js");
-const arcgisMap = document.querySelector('arcgis-map');
 const ClassBreaksRenderer = await $arcgis.import("@arcgis/core/renderers/ClassBreaksRenderer.js");
 const SimpleFillSymbol = await $arcgis.import("@arcgis/core/symbols/SimpleFillSymbol.js");
 
+const arcgisMap = document.querySelector('arcgis-map');
 
 const zonasBasicasSaludRenderer = new ClassBreaksRenderer({
   field: 'F_POBLACION__Población'

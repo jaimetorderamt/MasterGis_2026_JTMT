@@ -14,7 +14,7 @@ arcgisMap.addEventListener('arcgisViewReadyChange', (eventoViewReadyChange) => {
         url: 'https://services1.arcgis.com/nCKYwcSONQTkPA4K/ArcGIS/rest/services/Hospitales/FeatureServer/0'
     })
     // Añadir capa al mapa (no es necesaria añadir la capa general al mapa)
-    arcgisMap.map.add(hospitalesFl)
+    // arcgisMap.map.add(hospitalesFl)
 
     const peticionQuery = new Query({
         where: "Provincia = 'Segovia'",

@@ -1,6 +1,7 @@
 const FeatureLayer = await $arcgis.import("@arcgis/core/layers/FeatureLayer.js");
-const arcgisMap = document.querySelector('arcgis-map');
 const PopupTemplate = await $arcgis.import("@arcgis/core/PopupTemplate.js");
+
+const arcgisMap = document.querySelector('arcgis-map');
 
 const plantillaPopup = new PopupTemplate({
     title: '{Nombre}', 

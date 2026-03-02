@@ -2,6 +2,7 @@ const FeatureLayer = await $arcgis.import("@arcgis/core/layers/FeatureLayer.js")
 const UniqueValueRenderer = await $arcgis.import("@arcgis/core/renderers/UniqueValueRenderer.js");
 const SimpleFillSymbol = await $arcgis.import("@arcgis/core/symbols/SimpleFillSymbol.js");
 
+const arcgisMap = document.querySelector('arcgis-map')
 
 const redNatura2000Renderer = new UniqueValueRenderer({
   field: 'TIPO_NUEVO'
@@ -55,13 +56,10 @@ redNatura2000Renderer.addUniqueValueInfo({
   })
 });
 
-
 const redNatura2000Fl = new FeatureLayer({
   url: 'https://services1.arcgis.com/nCKYwcSONQTkPA4K/arcgis/rest/services/Red_Natura_2000/FeatureServer',
   renderer: redNatura2000Renderer
 });
-
-const arcgisMap = document.querySelector('arcgis-map')
 
 arcgisMap.addEventListener('arcgisViewReadyChange', () => {
   arcgisMap.map.add(redNatura2000Fl)
