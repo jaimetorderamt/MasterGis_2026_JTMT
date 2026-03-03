@@ -1,0 +1,415 @@
+/* Quitar márgenes y rellenos por defecto de todos los elementos principales */
+body,
+h1,
+h2,
+h4,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del cuerpo del documento */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+    color: #2c3e50;
+}
+
+/* Estilos de la barra de navegación */
+header {
+    background-color: #ffffff;
+    padding: 0 20px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nombreHeader {
+    font-weight: 600;
+    color: #2a5298;
+    margin: 0;
+}
+
+
+/* Estilos del contenedor del menú general */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del panel desplegable al activarse */
+.desplegable {
+    position: relative;
+    display: inline-block;
+}
+
+/* Diseño del propio botón */
+.botonDesplegable {
+    background-color: #2a5298;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el ratón por encima del botón*/
+.desplegable:hover .botonDesplegable {
+    background-color: #1e3c72;
+}
+
+/* Diseño del bloque de contenido del desplegable */
+.contenidoDesplegable {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 200px;
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Diseño de las opciones del desplegable */
+.contenidoDesplegable a {
+    color: #2c3e50;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el ratón por encima de las opciones del desplegable*/
+.contenidoDesplegable a:hover {
+    background-color: #f4f6f9;
+    color: #2a5298;
+    padding-left: 20px;
+}
+
+/* Mostrar menú desplegable al pasar el ratón por encima */
+.desplegable:hover .contenidoDesplegable {
+    display: block;
+}
+
+/* Para suavizar el scroll hacia los enlaces internos */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Estilos del contenedor principal del documento */
+main {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos de las diferentes secciones */
+section {
+    margin-bottom: 60px;
+}
+
+/* Estilos de la sección principal*/
+.panelPrincipal {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 40px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.panelPrincipal:hover {
+    transform: translateY(-5px);
+}
+
+.fotoPerfil img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #1e3c72;
+    transition: 0.3s;
+}
+
+.fotoperfil img:hover {
+    transform: scale(1.05);
+}
+
+.perfilPersonal .datos {
+    text-align: center;
+}
+
+.perfilPersonal .datos h1 {
+    font-size: 2.5rem;
+    color: #2a5298;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.perfilPersonal .datos h2 {
+    font-size: 2rem;
+    color: #1e3c72;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.texto p {
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+/* Estilos del la sección de aptitudes y habilidades */
+h4 {
+    font-size: 1.5rem;
+    color: #2a5298;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #fca311;
+    display: inline-block
+}
+
+/* Estilos generales de la lista creada de aptitudes y habilidades */
+.listaHabilidades {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Estilos específicos de la lista creada de aptitudes y habilidades */
+.listaHabilidades li {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    border-left: 4px solid #fca311;
+    flex: 1 1 300px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.listaHabilidades li:hover {
+    transform: translateX(5px);
+    background-color: #fffaf0;
+}
+
+/* Estilos generales de la línea temporal dividida por tipo de formación */
+.formacionProfesional,
+.formacionAcademica,
+.formacionComplementaria {
+    text-align: justify;
+    position: relative;
+}
+
+.elementoCronologia {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Línea vertical que conecta los elementos con ::before*/
+.elementoCronologia::before {
+    content: '';
+    position: absolute;
+    left: 35px;
+    top: 70px;
+    bottom: -50px;
+    width: 2px;
+    background-color: #d1d9e6;
+    z-index: 0;
+}
+
+/* Para cerrar la linea temporal en el ultimo evento de cada sección */
+.formacionProfesional .elementoCronologia:last-child,
+.formacionAcademica .elementoCronologia:last-child,
+.formacionComplementaria .elementoCronologia:last-child {
+    margin-bottom: 0;
+}
+
+.formacionProfesional .elementoCronologia:last-child::before,
+.formacionAcademica .elementoCronologia:last-child::before,
+.formacionComplementaria .elementoCronologia:last-child::before {
+    display: none;
+}
+
+/* Estilos del logo */
+.contenedorLogo {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 3px solid #2a5298;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.contenedorLogo img {
+    width: 80%;
+    height: auto;
+}
+
+.contenedorLogo:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos del contenido */
+.contenido {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    flex-grow: 1;
+    transition: 0.3s;
+}
+
+.contenido:hover {
+    transform: translateX(5px);
+    background-color: #ebf0fc
+}
+
+.contenido .fecha {
+    color: #2a5298;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contenido .titulo {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.contenido .descripcion {
+    color: #6c757d;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #2a5298;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+}
+
+.redes {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.redes .boton {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #fca311;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.redes .boton:hover {
+    background-color: #fcd890;
+}
+
+.actualizacionFecha {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Botón para volver arriba del documento */
+#botonSubir {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #fca311;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#botonSubir:hover {
+    background-color: #fcd890;
+}
+
+/* Diseño responsive para tablets */
+@media (max-width: 1024px) {
+    .panelPrincipal {
+        padding: 40px;
+        gap: 40px;
+    }
+
+    .fotoPerfil img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .perfilPersonal .datos h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Diseño responsive para móviles */
+@media (max-width: 768px) {
+    .panelPrincipal {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+        gap: 40px;
+    }
+
+    .perfilPersonal .datos h1 {
+        font-size: 2rem;
+    }
+
+    .elementoCronologia {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .elementoCronologia::before {
+        display: none;
+    }
+
+    .contenedorLogo {
+        margin: 0 auto;
+    }
+
+    .contenido h2 {
+        text-align: center;
+    }
+
+    .contenido {
+        text-align: center;
+    }
+}

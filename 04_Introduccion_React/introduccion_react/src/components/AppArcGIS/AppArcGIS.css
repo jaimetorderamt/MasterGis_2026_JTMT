@@ -1,0 +1,15 @@
+.aplicacion-arcgis {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: rgb(43, 205, 226);
+  text-align: center;
+
+  & .texto-aplicacion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
